@@ -2,7 +2,7 @@ package api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Register{
+public class Register {
 
 	@JsonProperty("password")
 	private String password;

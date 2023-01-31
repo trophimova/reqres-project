@@ -2,7 +2,7 @@ package api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SuccessReg{
+public class SuccessReg {
 
 	@JsonProperty("id")
 	private int id;
