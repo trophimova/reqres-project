@@ -5,11 +5,11 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.reqres.api.payloads.UserPayload;
 
-public class UserApiService {
+public class UserApiService extends ApiService {
 
 
     public Response registerUser(UserPayload user) {
-        return RestAssured.given().contentType(ContentType.JSON).log().all()
+        return setUp()
                 .body(user)
                 .when()
                 .post("api/register");

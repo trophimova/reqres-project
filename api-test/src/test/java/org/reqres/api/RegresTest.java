@@ -23,8 +23,8 @@ public class RegresTest {
 
     @Test
     public void testCanRegisterNewUser() {
-        Integer id = 4;
-        String token = "QpwL5tke4Pnpja7X4";
+//        Integer id = 4;
+//        String token = "QpwL5tke4Pnpja7X4";
 
 
         UserPayload user = new UserPayload()

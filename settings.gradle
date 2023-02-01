@@ -1,2 +1,3 @@
 rootProject.name = 'reqres-project'
+include 'api-test'
 
