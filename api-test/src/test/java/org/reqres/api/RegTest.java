@@ -1,6 +1,7 @@
 package org.reqres.api;
 
 
+import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import org.reqres.api.payloads.UserPayload;
 import org.reqres.api.services.UserApiService;
@@ -13,6 +14,7 @@ import static org.reqres.api.conditions.Conditions.*;
 public class RegTest {
 
     private final UserApiService userApiService = new UserApiService();
+    private final Faker faker = new Faker();
 
 
     @BeforeClass
@@ -23,8 +25,8 @@ public class RegTest {
 
     @Test
     public void testCanRegisterNewUser() {
-//        Integer id = 4;
-//        String token = "QpwL5tke4Pnpja7X4";
+        Integer id = 4;
+        String token = "QpwL5tke4Pnpja7X4";
 
         UserPayload user = new UserPayload()
                 .email("eve.holt@reqres.in")
@@ -33,6 +35,17 @@ public class RegTest {
         userApiService.registerUser(user)
                 .shouldHave(statusCode(200))
                 .shouldHave(bodyField("id", not(isEmptyOrNullString())));
+
+    }
+
+    @Test
+    public void testCanRegisterNewUserUsingFaker() {
+        UserPayload user = new UserPayload()
+                .email(faker.internet().emailAddress())
+                .password("pistol");
+
+        userApiService.registerUser(user)
+                .shouldHave(statusCode(400));
 
     }
 

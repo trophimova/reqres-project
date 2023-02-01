@@ -13,4 +13,8 @@ public class AssertableResponse {
         condition.check(response);
         return this;
     }
+
+    public <T> T asPojo(Class<T> tClass) {
+        return response.as(tClass);
+    }
 }
