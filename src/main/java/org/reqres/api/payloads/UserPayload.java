@@ -1,4 +1,4 @@
-package org.reqres.api;
+package org.reqres.api.payloads;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

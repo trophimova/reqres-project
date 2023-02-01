@@ -1,9 +1,8 @@
-package org.reqres;
+package org.reqres.api;
 
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import org.reqres.api.UserPayload;
+import org.reqres.api.payloads.UserPayload;
 import org.reqres.api.services.UserApiService;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
