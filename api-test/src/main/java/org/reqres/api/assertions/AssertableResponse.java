@@ -1,5 +1,6 @@
 package org.reqres.api.assertions;
 
+import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;
 import org.reqres.api.conditions.Condition;
@@ -16,5 +17,9 @@ public class AssertableResponse {
 
     public <T> T asPojo(Class<T> tClass) {
         return response.as(tClass);
+    }
+
+    public Headers headers() {
+        return response.getHeaders();
     }
 }
