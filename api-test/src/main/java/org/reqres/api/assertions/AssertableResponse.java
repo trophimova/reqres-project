@@ -7,11 +7,11 @@ import org.reqres.api.conditions.Condition;
 @RequiredArgsConstructor
 public class AssertableResponse {
 
-    private Response register;
+    private final Response register;
 
-    public AssertableResponse(Response register) {
-        this.register = register;
-    }
+//    public AssertableResponse(Response register) {
+//        this.register = register;
+//    }
 
     public void shouldHave(Condition condition) {
 
