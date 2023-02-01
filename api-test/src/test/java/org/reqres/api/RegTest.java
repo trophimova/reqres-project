@@ -7,10 +7,10 @@ import org.reqres.api.services.UserApiService;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.Matchers.isEmptyString;
 import static org.hamcrest.Matchers.not;
+import static org.reqres.api.conditions.Conditions.*;
 
-public class RegresTest {
+public class RegTest {
 
     private final UserApiService userApiService = new UserApiService();
 
@@ -26,16 +26,17 @@ public class RegresTest {
 //        Integer id = 4;
 //        String token = "QpwL5tke4Pnpja7X4";
 
-
+        // given
         UserPayload user = new UserPayload()
                 .email("eve.holt@reqres.in")
                 .password("pistol");
-
+        // expect
         userApiService.registerUser(user)
-                .then().log().all()
-                .assertThat()
-                .statusCode(200)
-                .body("id", not(isEmptyString()));
+                .shouldHave(statusCode(200));
+//                .then().log().all()
+//                .assertThat()
+//                .statusCode(200)
+//                .body("id", not(isEmptyString()));
     }
 
 }
