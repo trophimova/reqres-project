@@ -26,17 +26,13 @@ public class RegresTest {
     public void testCanRegisterNewUser() {
         Integer id = 4;
         String token = "QpwL5tke4Pnpja7X4";
+
+
         UserPayload user = new UserPayload()
                 .email("eve.holt@reqres.in")
                 .password("pistol");
 
-        userApiService.registerUser(user);
-
-
-        RestAssured.given().contentType(ContentType.JSON).log().all()
-                .body(user)
-                .when()
-                .post("api/register")
+        userApiService.registerUser(user)
                 .then().log().all()
                 .assertThat()
                 .statusCode(200)
