@@ -1,4 +1,4 @@
-package api;
+package org.reqres.api;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -22,9 +22,9 @@ public class Specifications {
                 .build();
     }
 
-    public static ResponseSpecification responseSpecError400() {
+    public static ResponseSpecification responseSpecError404() {
         return new ResponseSpecBuilder()
-                .expectStatusCode(400)
+                .expectStatusCode(404)
                 .build();
     }
 

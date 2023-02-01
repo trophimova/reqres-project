@@ -1,7 +1,11 @@
-package api;
+package org.reqres.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class UserData {
 
 	@JsonProperty("last_name")
