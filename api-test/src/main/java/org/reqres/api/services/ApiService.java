@@ -1,6 +1,7 @@
 package org.reqres.api.services;
 
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.filter.Filter;
@@ -30,8 +31,8 @@ public class ApiService {
     private List<Filter> getFilters() {
         ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
         if(config.logging()) {
-            return Arrays.asList(new RequestLoggingFilter(), new ResponseLoggingFilter());
+            return Arrays.asList(new RequestLoggingFilter(), new ResponseLoggingFilter(), new AllureRestAssured());
         }
-        return Collections.emptyList();
+        return Collections.singletonList(new AllureRestAssured());
     }
 }

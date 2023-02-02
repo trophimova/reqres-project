@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:6.14.3'
+    implementation 'org.testng:testng:7.5'
     implementation 'io.rest-assured:rest-assured:5.3.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
 //    //compileOnly 'org.projectlombok:lombok:1.18.24'
@@ -21,10 +21,9 @@ dependencies {
     implementation 'ch.qos.logback:logback-core:1.4.5'
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'org.aeonbits.owner:owner:1.0.4'
-    //implementation 'com.github.dzieciou.testing:curl-logger:2.1.2'
     implementation 'io.qameta.allure:allure-rest-assured:2.20.1'
     implementation 'io.qameta.allure:allure-testng:2.20.1'
-    runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.19'
+    //runtimeOnly group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.19'
 
 }
 
@@ -45,7 +44,7 @@ test {
 
 allure {
     version = '2.8.1'
-    aspectjweaver = 'true'
+    //aspectjweaver = 'true'
     configuration = 'implementation'
     autoconfigure = true
 }
