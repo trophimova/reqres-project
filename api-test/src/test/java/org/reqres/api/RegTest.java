@@ -3,10 +3,13 @@ package org.reqres.api;
 
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
+import org.aeonbits.owner.ConfigFactory;
 import org.reqres.api.payloads.UserPayload;
 import org.reqres.api.services.UserApiService;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.util.Locale;
 
 import static org.hamcrest.Matchers.*;
 import static org.reqres.api.conditions.Conditions.*;
@@ -14,12 +17,14 @@ import static org.reqres.api.conditions.Conditions.*;
 public class RegTest {
 
     private final UserApiService userApiService = new UserApiService();
-    private final Faker faker = new Faker();
+    private Faker faker;
 
 
     @BeforeClass
     public void setUp() {
-        RestAssured.baseURI = "https://reqres.in/";
+        ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+        faker = new Faker(new Locale(config.locale()));
+        RestAssured.baseURI = config.baseUrl();
     }
 
 
