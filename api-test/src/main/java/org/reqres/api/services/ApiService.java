@@ -1,6 +1,8 @@
 package org.reqres.api.services;
 
+import com.github.dzieciou.testing.curl.CurlRestAssuredConfigFactory;
 import io.restassured.RestAssured;
+import io.restassured.config.RestAssuredConfig;
 import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -17,9 +19,12 @@ import java.util.List;
 public class ApiService {
 
     protected RequestSpecification setUp() {
+        RestAssuredConfig config = CurlRestAssuredConfigFactory.createConfig();
 
         return RestAssured
-                .given().contentType(ContentType.JSON)
+                .given()
+                .config(config)
+                .contentType(ContentType.JSON)
                 .filters(getFilters());
     }
 

@@ -22,6 +22,7 @@ dependencies {
     implementation 'ch.qos.logback:logback-core:1.4.5'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'com.github.dzieciou.testing:curl-logger:2.1.2'
 }
 
 test {
