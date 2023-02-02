@@ -13,7 +13,7 @@ public class AssertableResponse {
 
     private final Response response;
 
-    @Step
+    @Step("then api response should have {condition}")
     public AssertableResponse shouldHave(Condition condition) {
         log.info("About to check condition {}", condition);
         condition.check(response);
