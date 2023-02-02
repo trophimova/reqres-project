@@ -14,15 +14,17 @@ dependencies {
     implementation 'org.testng:testng:7.5'
     implementation 'io.rest-assured:rest-assured:5.3.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    //compileOnly 'org.projectlombok:lombok:1.18.24'
+    //annotationProcessor 'org.projectlombok:lombok:1.18.24'
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'ch.qos.logback:logback-classic:1.4.5'
     implementation 'ch.qos.logback:logback-core:1.4.5'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.aeonbits.owner:owner:1.0.12'
-    implementation 'com.github.dzieciou.testing:curl-logger:2.1.2'
+    //implementation 'com.github.dzieciou.testing:curl-logger:2.1.2'
+    implementation 'io.qameta.allure:allure-rest-assured:2.17.3'
+    implementation 'io.qameta.allure:allure-testng:2.17.3'
 }
 
 test {
@@ -37,4 +39,11 @@ test {
     }
 
     test.outputs.upToDateWhen { false }
+}
+
+allure {
+    version = '2.11.2'
+    aspectjweaver = 'true'
+    configuration = 'implementation'
+    autoconfigure = true
 }
