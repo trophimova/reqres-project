@@ -1,8 +1,8 @@
-package org.reqres.api.services;
+package org.reqres.api.tests.services;
 
 import io.qameta.allure.Step;
-import org.reqres.api.assertions.AssertableResponse;
-import org.reqres.api.payloads.UserPayload;
+import org.reqres.api.tests.assertions.AssertableResponse;
+import org.reqres.api.tests.payloads.UserPayload;
 
 public class UserApiService extends ApiService {
 
@@ -11,6 +11,6 @@ public class UserApiService extends ApiService {
         return new AssertableResponse(setUp()
                 .body(user)
                 .when()
-                .post("api/register"));
+                .post("/tasks/rest/doregister"));
     }
 }

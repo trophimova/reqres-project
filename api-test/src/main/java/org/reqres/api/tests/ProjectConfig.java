@@ -1,4 +1,4 @@
-package org.reqres.api;
+package org.reqres.api.tests;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;

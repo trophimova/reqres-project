@@ -1,4 +1,4 @@
-package org.reqres.api.payloads;
+package org.reqres.api.tests.payloads;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -11,6 +11,9 @@ import lombok.experimental.Accessors;
 @ToString
 @Accessors(fluent = true)
 public class UserPayload {
+
+	@JsonProperty("name")
+	private String name;
 
 	@JsonProperty("password")
 	private String password;

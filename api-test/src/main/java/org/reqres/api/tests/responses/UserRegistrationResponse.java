@@ -1,4 +1,4 @@
-package org.reqres.api.responses;
+package org.reqres.api.tests.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class UserRegistrationResponse {
 
-	@JsonProperty("id")
-	private String id;
+	@JsonProperty("avatar")
+	private String avatar;
 
 }

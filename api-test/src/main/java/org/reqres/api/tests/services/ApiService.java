@@ -1,23 +1,23 @@
-package org.reqres.api.services;
+package org.reqres.api.tests.services;
 
 
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
-import io.restassured.config.RestAssuredConfig;
 import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.aeonbits.owner.ConfigFactory;
-import org.reqres.api.ProjectConfig;
+import org.reqres.api.tests.ProjectConfig;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class ApiService {
+
+
 
     protected RequestSpecification setUp() {
 

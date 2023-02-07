@@ -1,4 +1,4 @@
-package org.reqres.api.conditions;
+package org.reqres.api.tests.conditions;
 
 import io.restassured.response.Response;
 

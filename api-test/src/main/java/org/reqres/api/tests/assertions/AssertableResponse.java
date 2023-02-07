@@ -1,11 +1,11 @@
-package org.reqres.api.assertions;
+package org.reqres.api.tests.assertions;
 
 import io.qameta.allure.Step;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.reqres.api.conditions.Condition;
+import org.reqres.api.tests.conditions.Condition;
 
 @RequiredArgsConstructor
 @Slf4j

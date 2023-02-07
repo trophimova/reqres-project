@@ -1,4 +1,4 @@
-package org.reqres.api.conditions;
+package org.reqres.api.tests.conditions;
 
 import lombok.experimental.UtilityClass;
 import org.hamcrest.Matcher;
